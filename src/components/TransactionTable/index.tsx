@@ -3,12 +3,9 @@ import { api } from "../services/api";
 import { Container } from "./styles";
 
 export function TransactionTable() {
-
   useEffect(() => {
-    api.get('transections')
-    .then(response => console.log(response.data))
-  }, [])
-
+    api.get("transections").then((response) => console.log(response.data));
+  }, []);
   return (
     <Container>
       <table>
@@ -30,7 +27,7 @@ export function TransactionTable() {
           </tr>
           <tr>
             <td>Desenvolvimento de website</td>
-            <td className="withdraw" >-R$12.00</td>
+            <td className="withdraw">-R$12.00</td>
             <td>Desenvolvimento</td>
             <td>20/02/2022</td>
           </tr>
@@ -49,5 +46,5 @@ export function TransactionTable() {
         </tbody>
       </table>
     </Container>
-  )
+  );
 }

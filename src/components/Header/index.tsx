@@ -1,37 +1,18 @@
-import { useState } from "react";
-import Modal from 'react-modal';
 import logoImg from "../../assets/logo.svg";
 import { Container, Content } from "./styles";
+interface HeaderProps {
+  onOpenNewTransectionModal: () => void;
+};
 
-export function Header() {
-
-  const [ isNewTransectionOpen, setIsNewTransectionOpen ] = useState(false);
-
-  function handleOpenNewTransectionModal(){
-    setIsNewTransectionOpen(true)
-  }
-
-  function handleCloseNewTransectionModal(){
-    setIsNewTransectionOpen(false)
-  }
-
+export function Header({ onOpenNewTransectionModal }: HeaderProps) {
   return (
     <Container>
       <Content>
         <img src={logoImg} alt="dtmoney" />
-        <button type="button" onClick={handleOpenNewTransectionModal}>
+        <button type="button" onClick={onOpenNewTransectionModal}>
           Nova transação
         </button>
       </Content>
-
-      <Modal 
-        isOpen={isNewTransectionOpen} 
-        onRequestClose={handleCloseNewTransectionModal}
-      >
-        <h2>Cadastrar Transação</h2>
-      </Modal>
-
     </Container>
   )
-
-}
+};
