@@ -3,7 +3,7 @@ import { Dashboard } from "./components/Dashboard/index";
 import { GlobalStyle } from "./styles/global";
 import { NewTransactionModal } from "./components/NewTransactionModal";
 import { useState } from "react";
-import { TransactionProvider } from "../src/TransactionsContext";
+import { TransactionProvider } from "./hooks/useTransactions";
 
 export function App() {
   const [isNewTransactionModalOpen, setIsNewTransactionModalOpen] =
